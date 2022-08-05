@@ -1,2 +1,2 @@
-# C-Design-patterns
+# Cpp Design Patterns
 C++ 设计模式
