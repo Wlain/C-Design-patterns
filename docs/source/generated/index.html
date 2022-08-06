@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="En" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to cppDesignPatterns’s documentation! &mdash; cppDesignPatterns 0.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Cpp Design Patterns:C++ 设计模式 &mdash; cppDesignPatterns 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/sphinx_rtd_size.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -35,8 +39,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to cppDesignPatterns’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#">Cpp Design Patterns:C++ 设计模式</a><ul>
+<li><a class="reference internal" href="#id1">设计模式的分类：</a></li>
+<li><a class="reference internal" href="#id2">遇到问题的一般思路</a></li>
+<li><a class="reference internal" href="#id3">重构思路</a></li>
+<li><a class="reference internal" href="#id4">面向对象设计八大原则</a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -53,9 +62,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to cppDesignPatterns’s documentation!</li>
+      <li>Cpp Design Patterns:C++ 设计模式</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -63,19 +72,120 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="welcome-to-cppdesignpatterns-s-documentation">
-<h1>Welcome to cppDesignPatterns’s documentation!<a class="headerlink" href="#welcome-to-cppdesignpatterns-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+  <section id="cpp-design-patterns-c">
+<h1>Cpp Design Patterns:C++ 设计模式<a class="headerlink" href="#cpp-design-patterns-c" title="Permalink to this heading"></a></h1>
+<section id="id1">
+<h2>设计模式的分类：<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p>创建型模式（Creational Patterns）：将对象的部分创建工作延迟到子类或者其他对象，从而应对需求变化为对象创建时具体类型实现引来的冲击。</p>
+<ul>
+<li><p>单例模式（Singleton Pattern）</p></li>
+<li><p>抽象工程模式（Abstract factory Pattern）</p></li>
+<li><p>建造者模式（Builder Pattern）</p></li>
+<li><p>工程方法模式（Factory Method Pattern）</p></li>
+<li><p>原型模式（Prototype Pattern）</p></li>
 </ul>
-</div>
+</li>
+<li><p>结构型模式（Structural Patterns）：通过类继承或者对象组合获得更灵活的结构，从而应对需求变化为对象的结构带来的冲击。</p>
+<ul>
+<li><p>适配器模式（Adapter Pattern）</p></li>
+<li><p>桥接模式（Bridge Pattern）</p></li>
+<li><p>装饰者模式（decoration Pattern）</p></li>
+<li><p>组合模式（Composite Pattern）</p></li>
+<li><p>外观模式（Facade Pattern）</p></li>
+<li><p>享元模式（Flyweight Pattern）</p></li>
+<li><p>代理模式（Proxy Pattern）</p></li>
+</ul>
+</li>
+<li><p>行为型模式（Behavioral Patterns）：通过类继承或者对象组合来划分类与对象间的职责，从而应对需求变化为多个交互的对象带来的冲击。</p>
+<ul>
+<li><p>模板方法模式（Template Method Pattern）</p></li>
+<li><p>命令模式（Command Pattern）</p></li>
+<li><p>迭代器模式（Iterator Pattern）</p></li>
+<li><p>观察者模式（Observer Pattern）</p></li>
+<li><p>中介者模式（Mediator Pattern）</p></li>
+<li><p>备忘录模式（Memento Pattern）</p></li>
+<li><p>解释器模式（Interpreter Pattern）</p></li>
+<li><p>状态模式（State Pattern）</p></li>
+<li><p>策略模式（Strategy Pattern）</p></li>
+<li><p>职责链模式（Chain of Responsibility Pattern）</p></li>
+<li><p>访问者模式（Visitor Pattern）</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>遇到问题的一般思路<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>分解：即分而治之，将大问题分解为多个小问题，将复杂问题分解为多个简单问题。</p></li>
+<li><p>抽象：抽象是一种能让你在关注某一概念的同时可以放心地忽略其中一些细节的能力——在不同的层次处理不同的细节</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>重构思路<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>静态 → 动态</p></li>
+<li><p>早绑定 → 晚绑定</p></li>
+<li><p>继承 → 组合</p></li>
+<li><p>编译时依赖 → 运行时依赖</p></li>
+<li><p>紧耦合 → 松耦合</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>面向对象设计八大原则<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>一、依赖倒置原则（DIP）</p>
+<ul>
+<li><p>高层模块(稳定)不应该依赖于低层模块(变化)，二者都应该依赖于抽象(稳定)</p></li>
+<li><p>抽象(稳定)不应该依赖于实现细节(变化) ，实现细节应该依赖于抽象(稳定)</p></li>
+</ul>
+</li>
+<li><p>二、开放封闭原则（OCP）</p>
+<ul>
+<li><p>对扩展开放，对更改封闭</p></li>
+<li><p>类模块应该是可扩展的，但是不可修改</p></li>
+</ul>
+</li>
+<li><p>三、单一职责原则（SRP）</p>
+<ul>
+<li><p>一个类应该仅有一个引起它变化的原因</p></li>
+<li><p>变化的方向隐含着类的责任</p></li>
+</ul>
+</li>
+<li><p>四、Liskov 替换原则（LSP）</p>
+<ul>
+<li><p>子类必须能够替换它们的基类(IS-A)</p></li>
+<li><p>继承表达类型抽象</p></li>
+</ul>
+</li>
+<li><p>五、接口隔离原则（ISP）</p>
+<ul>
+<li><p>不应该强迫客户程序依赖它们不用的方法</p></li>
+<li><p>接口应该小而完备</p></li>
+</ul>
+</li>
+<li><p>六、优先使用对象组合，而不是类继承</p>
+<ul>
+<li><p>类继承通常为“白箱复用”，对象组合通常为“黑箱复用”</p></li>
+<li><p>继承在某种程度上破坏了封装性，子类父类耦合度高</p></li>
+<li><p>而对象组合则只要求被组合的对象具有良好定义的接口，耦合度低。</p></li>
+</ul>
+</li>
+<li><p>七、封装变化点</p>
+<ul>
+<li><p>使用封装来创建对象之间的分界层，让设计者可以在分界层的一侧进行修改，而不会对另一侧产生不良的影响，从而实现层次间的松耦合。</p></li>
+</ul>
+</li>
+<li><p>八、针对接口编程，而不是针对实现编程</p>
+<ul>
+<li><p>不将变量类型声明为某个特定的具体类，而是声明为某个接口</p></li>
+<li><p>客户程序无需获知对象的具体类型，只需要知道对象所具有的接口</p></li>
+<li><p>减少系统中各部分的依赖关系，从而实现“高内聚、松耦合”的类型设计方案</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
 
 
            </div>
