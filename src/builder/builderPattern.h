@@ -1,0 +1,12 @@
+//
+// Created by william on 2022/8/5.
+//
+
+#ifndef CPPDESIGNPATTERNS_BUILDERPATTERN_H
+#define CPPDESIGNPATTERNS_BUILDERPATTERN_H
+
+class BuilderPattern
+{
+};
+
+#endif // CPPDESIGNPATTERNS_BUILDERPATTERN_H
