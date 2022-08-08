@@ -71,6 +71,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#id18">使用原型设计模式有什么意义？</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#adapter-pattern">适配器模式（Adapter Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">目的：从你拥有的接口中得到你想要的接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">适配器设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">什么时候使用适配器设计模式？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stl">stl中使用适配器设计模式的例子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">生活中使用适配器的例子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">桥接和适配器设计模式有什么区别？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">装饰器和适配器设计模式有什么区别？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">代理和适配器设计模式有什么区别？</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -356,6 +367,65 @@
 <li><p>有助于删除一堆冗余代码</p></li>
 <li><p>在不知道其类型的情况下处理对象时更方便</p></li>
 <li><p>当您使用命令设计模式时，原型设计模式是一个明显的选择</p></li>
+</ul>
+</section>
+</section>
+<section id="adapter-pattern">
+<h2>适配器模式（Adapter Pattern）<a class="headerlink" href="#adapter-pattern" title="Permalink to this headline"></a></h2>
+<section id="id19">
+<h3>目的：从你拥有的接口中得到你想要的接口<a class="headerlink" href="#id19" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>适配器允许两个不兼容的类一起工作，方法是将一个类的接口转换为客户端/API 用户期望的接口而不更改它们。基本上，添加中间类即适配器</p></li>
+</ul>
+</section>
+<section id="id20">
+<h3>适配器设计模式的好处<a class="headerlink" href="#id20" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>开闭原则：适配器模式的一个优点是您不需要更改现有的类或接口,通过引入一个新类，它充当接口和类之间的适配器，您可以避免对现有代码进行任何更改</p></li>
+<li><p>并避免了其他组件或应用程序中的任何更改和副作用</p></li>
+<li><p>遵循单一责任原则,需要更少的维护、学习曲线和测试。</p></li>
+<li><p>遵循依赖倒置原则,保持多个版本之间的二进制兼容性</p></li>
+</ul>
+</section>
+<section id="id21">
+<h3>什么时候使用适配器设计模式？<a class="headerlink" href="#id21" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>当你想使用一些现有的类时使用适配器类，但它的接口与你的其余代码不兼容</p></li>
+<li><p>当您想要重用几个现有的子类时，这些子类缺少一些无法添加到超类的通用功能</p></li>
+</ul>
+</section>
+<section id="stl">
+<h3>stl中使用适配器设计模式的例子<a class="headerlink" href="#stl" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>stack、queue 和 priority_queue 是来自deque和vector的适配器， 当堆栈执行stack::push()时，底层向量执行vector::push_back()。</p></li>
+</ul>
+</section>
+<section id="id22">
+<h3>生活中使用适配器的例子<a class="headerlink" href="#id22" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>读卡器，充当存储卡和笔记本电脑之间的适配器</p></li>
+<li><p>手机和笔记本电脑充电器是一种适配器，可将标准电压和电流转换为您的设备所需的电压</p></li>
+</ul>
+</section>
+<section id="id23">
+<h3>桥接和适配器设计模式有什么区别？<a class="headerlink" href="#id23" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>适配器通常与现有应用程序一起使用，以使一些原本不兼容的类很好地协同工作</p></li>
+<li><p>Bridge通常是预先设计的，可以独立开发应用程序的各个部分</p></li>
+</ul>
+</section>
+<section id="id24">
+<h3>装饰器和适配器设计模式有什么区别？<a class="headerlink" href="#id24" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>适配器将一个接口转换为另一个接口，而不添加其他功能</p></li>
+<li><p>装饰器将新功能添加到现有接口中</p></li>
+</ul>
+</section>
+<section id="id25">
+<h3>代理和适配器设计模式有什么区别？<a class="headerlink" href="#id25" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>适配器设计模式将一个类的接口转换为兼容但不同的接口</p></li>
+<li><p>代理提供相同但简单的界面，或者有时充当唯一的包装器</p></li>
 </ul>
 </section>
 </section>
