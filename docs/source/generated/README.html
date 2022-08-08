@@ -43,13 +43,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">遇到问题的一般思路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">重构思路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">面向对象设计八大原则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#builder-pattern">建造者模式（Builder Pattern）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">使用场景：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">建造者设计模式的好处</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">什么时候应该使用构建器设计模式？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#builderbuilder">为什么我们在实现Builder设计模式时需要一个Builder类？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#builder">Builder设计模式的最大优势</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">抽象工厂和构建器设计模式有什么区别？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abstract-factory-pattern">抽象工厂模式（Abstract factory Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">使用场景：用于创建批量对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">工厂设计模式的好处</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#builder-pattern">建造者模式（Builder Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">使用场景：用于分段创建对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">建造者设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">什么时候应该使用构建器设计模式？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builderbuilder">为什么我们在实现Builder设计模式时需要一个Builder类？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builder">Builder设计模式的最大优势</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">抽象工厂和构建器设计模式有什么区别？</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -86,9 +93,9 @@
 <li><p>创建型模式（Creational Patterns）：将对象的部分创建工作延迟到子类或者其他对象，从而应对需求变化为对象创建时具体类型实现引来的冲击。</p>
 <ul>
 <li><p>单例模式（Singleton Pattern）</p></li>
-<li><p>抽象工程模式（Abstract factory Pattern）</p></li>
+<li><p>抽象工厂模式（Abstract factory Pattern）</p></li>
 <li><p>建造者模式（Builder Pattern）</p></li>
-<li><p>工程方法模式（Factory Method Pattern）</p></li>
+<li><p>工厂方法模式（Factory Method Pattern）</p></li>
 <li><p>原型模式（Prototype Pattern）</p></li>
 </ul>
 </li>
@@ -191,18 +198,35 @@
 </li>
 </ul>
 </section>
+<section id="abstract-factory-pattern">
+<h2>抽象工厂模式（Abstract factory Pattern）<a class="headerlink" href="#abstract-factory-pattern" title="Permalink to this headline"></a></h2>
+<section id="id5">
+<h3>使用场景：用于创建批量对象<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>不允许使用构造函数并强制用户使用静态方法,私有构造函数和静态方法</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>工厂设计模式的好处<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>用于不同对象创建的单点/类。因此易于维护和理解软件</p></li>
+<li><p>可以使用抽象工厂在不知道其类型的情况下创建对象</p></li>
+<li><p>它提供了很好的模块化</p></li>
+<li><p>允许更轻松地更改应用程序的设计，这称为松散耦合</p></li>
+</ul>
+</section>
+</section>
 <section id="builder-pattern">
 <h2>建造者模式（Builder Pattern）<a class="headerlink" href="#builder-pattern" title="Permalink to this headline"></a></h2>
-</section>
-<section id="id5">
-<h2>使用场景：<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<section id="id7">
+<h3>使用场景：用于分段创建对象<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>当我们想要构造一个复杂的对象时，使用构建器设计模式。但是，我们不希望有一个复杂的构造函数成员或需要许多参数的构造函数成员。</p></li>
 <li><p>Builder设计模式一步一步地构造一个复杂的对象，最后一步将返回该对象。构造对象的过程应该是通用的，以便它可以在各种方法的帮助下用于创建同一对象的不同表示</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>建造者设计模式的好处<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+<section id="id8">
+<h3>建造者设计模式的好处<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>在构建器模式中，代码行数至少增加了一倍。但是在设计灵活性、更少或没有构造函数的参数以及更易读的代码方面，付出的努力得到了回报</p></li>
 <li><p>Builder 设计模式还有助于最小化构造函数中的参数数量，因此不需要将 null传递 给构造函数的可选参数</p></li>
@@ -210,14 +234,14 @@
 <li><p>将构造与 对象表示分离 使对象表示切片和精确。将构建器实体分开提供了创建和实例化不同对象表示的灵活性</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>什么时候应该使用构建器设计模式？<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
+<section id="id9">
+<h3>什么时候应该使用构建器设计模式？<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>每当创建新对象需要设置许多参数时，其中一些（或全部）是可选的</p></li>
 </ul>
 </section>
 <section id="builderbuilder">
-<h2>为什么我们在实现Builder设计模式时需要一个Builder类？<a class="headerlink" href="#builderbuilder" title="Permalink to this headline"></a></h2>
+<h3>为什么我们在实现Builder设计模式时需要一个Builder类？<a class="headerlink" href="#builderbuilder" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>这不是必需的，但这样做有一些好处:</p>
 <ul>
@@ -230,7 +254,7 @@
 </ul>
 </section>
 <section id="builder">
-<h2>Builder设计模式的最大优势<a class="headerlink" href="#builder" title="Permalink to this headline"></a></h2>
+<h3>Builder设计模式的最大优势<a class="headerlink" href="#builder" title="Permalink to this headline"></a></h3>
 <p>不使用建造者模式:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyClass</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">obj9</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
@@ -241,13 +265,14 @@
 </div>
 <p>使用使用建造者之后，获得更具表现力的代码，可以查看哪个数据成员被分配了什么，甚至可以更改分配顺序</p>
 </section>
-<section id="id8">
-<h2>抽象工厂和构建器设计模式有什么区别？<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<section id="id10">
+<h3>抽象工厂和构建器设计模式有什么区别？<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Factory批量生产对象，这些对象可以是继承层次结构中的任何对象（如 Point、Point2D、Point3D）。</p></li>
 <li><p>虽然Builder处理仅限于单个对象的对象的实例化。 您会看到Factory是关于批量对象创建的，而构建器是分段对象创建的。</p></li>
 <li><p>在这两种模式中，您都可以在其他类中分离出与对象创建相关的机制</p></li>
 </ul>
+</section>
 </section>
 </section>
 

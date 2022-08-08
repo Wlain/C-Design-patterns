@@ -1,7 +1,8 @@
+extern void abstractFactorTest();
 extern void builderPatternTest();
 
 int main()
 {
-    builderPatternTest();
+    abstractFactorTest();
     return 0;
 }
