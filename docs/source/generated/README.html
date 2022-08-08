@@ -43,18 +43,26 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">遇到问题的一般思路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">重构思路</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">面向对象设计八大原则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#singleton-pattern">单例模式（Singleton Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">目的：确保在任何时间点都只存在一个类的一个实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">设计细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">单例设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">单例设计模式的弊端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">什么时候应该使用单例设计模式？</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#abstract-factory-pattern">抽象工厂模式（Abstract factory Pattern）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5">使用场景：用于创建批量对象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">工厂设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">目的：用于创建批量对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">工厂设计模式的好处</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#builder-pattern">建造者模式（Builder Pattern）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">使用场景：用于分段创建对象</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">建造者设计模式的好处</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">什么时候应该使用构建器设计模式？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">目的：用于分段创建对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">建造者设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">什么时候应该使用构建器设计模式？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builderbuilder">为什么我们在实现Builder设计模式时需要一个Builder类？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builder">Builder设计模式的最大优势</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">抽象工厂和构建器设计模式有什么区别？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">抽象工厂和构建器设计模式有什么区别？</a></li>
 </ul>
 </li>
 </ul>
@@ -198,16 +206,58 @@
 </li>
 </ul>
 </section>
+<section id="singleton-pattern">
+<h2>单例模式（Singleton Pattern）<a class="headerlink" href="#singleton-pattern" title="Permalink to this headline"></a></h2>
+<section id="id5">
+<h3>目的：确保在任何时间点都只存在一个类的一个实例<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>单例设计模式确保一个类只有一个实例，并提供对该实例的全局访问点。当恰好一个对象需要在整个系统中协调动作时，就很有用，比如log</p></li>
+<li><p>单例设计模式只不过是指定一个生命周期</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>设计细节<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>私有构造函数</p></li>
+<li><p>删除了复制构造函数和复制赋值运算符</p></li>
+<li><p>静态对象创建和静态访问方法</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>单例设计模式的好处<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>单例设计模式对应用程序配置很有帮助，因为配置可能需要全局访问，并且未来对应用程序配置的扩展可以在一个地方合并</p></li>
+<li><p>此类的第二个常见用途是更新旧代码以在新架构中工作。由于开发人员可能已经自由地使用了全局变量，因此将它们移动到单个类中并使其成为单例，可能是将程序内联到更强大的面向对象结构的中间步骤</p></li>
+<li><p>单例设计模式还增强了可维护性，因为它提供了对特定实例的单点访问</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>单例设计模式的弊端<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>单例对象在应用程序的整个生命周期内保持状态</p></li>
+<li><p>单例对象导致代码紧密耦合</p></li>
+<li><p>多线程下需要加锁，性能会降低</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>什么时候应该使用单例设计模式？<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Singleton 用于硬件接口使用限制</p></li>
+<li><p>单例设计模式也广泛用于管理配置或属性文件以管理访问</p></li>
+<li><p>可以将缓存用作单例对象，因为它可以具有全局引用点，并且对于将来对缓存对象的所有调用，客户端应用程序将使用内存中的对象</p></li>
+</ul>
+</section>
+</section>
 <section id="abstract-factory-pattern">
 <h2>抽象工厂模式（Abstract factory Pattern）<a class="headerlink" href="#abstract-factory-pattern" title="Permalink to this headline"></a></h2>
-<section id="id5">
-<h3>使用场景：用于创建批量对象<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<section id="id10">
+<h3>目的：用于创建批量对象<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>不允许使用构造函数并强制用户使用静态方法,私有构造函数和静态方法</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>工厂设计模式的好处<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<section id="id11">
+<h3>工厂设计模式的好处<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>用于不同对象创建的单点/类。因此易于维护和理解软件</p></li>
 <li><p>可以使用抽象工厂在不知道其类型的情况下创建对象</p></li>
@@ -218,15 +268,15 @@
 </section>
 <section id="builder-pattern">
 <h2>建造者模式（Builder Pattern）<a class="headerlink" href="#builder-pattern" title="Permalink to this headline"></a></h2>
-<section id="id7">
-<h3>使用场景：用于分段创建对象<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<section id="id12">
+<h3>目的：用于分段创建对象<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>当我们想要构造一个复杂的对象时，使用构建器设计模式。但是，我们不希望有一个复杂的构造函数成员或需要许多参数的构造函数成员。</p></li>
 <li><p>Builder设计模式一步一步地构造一个复杂的对象，最后一步将返回该对象。构造对象的过程应该是通用的，以便它可以在各种方法的帮助下用于创建同一对象的不同表示</p></li>
 </ul>
 </section>
-<section id="id8">
-<h3>建造者设计模式的好处<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<section id="id13">
+<h3>建造者设计模式的好处<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>在构建器模式中，代码行数至少增加了一倍。但是在设计灵活性、更少或没有构造函数的参数以及更易读的代码方面，付出的努力得到了回报</p></li>
 <li><p>Builder 设计模式还有助于最小化构造函数中的参数数量，因此不需要将 null传递 给构造函数的可选参数</p></li>
@@ -234,8 +284,8 @@
 <li><p>将构造与 对象表示分离 使对象表示切片和精确。将构建器实体分开提供了创建和实例化不同对象表示的灵活性</p></li>
 </ul>
 </section>
-<section id="id9">
-<h3>什么时候应该使用构建器设计模式？<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<section id="id14">
+<h3>什么时候应该使用构建器设计模式？<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>每当创建新对象需要设置许多参数时，其中一些（或全部）是可选的</p></li>
 </ul>
@@ -265,8 +315,8 @@
 </div>
 <p>使用使用建造者之后，获得更具表现力的代码，可以查看哪个数据成员被分配了什么，甚至可以更改分配顺序</p>
 </section>
-<section id="id10">
-<h3>抽象工厂和构建器设计模式有什么区别？<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<section id="id15">
+<h3>抽象工厂和构建器设计模式有什么区别？<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Factory批量生产对象，这些对象可以是继承层次结构中的任何对象（如 Point、Point2D、Point3D）。</p></li>
 <li><p>虽然Builder处理仅限于单个对象的对象的实例化。 您会看到Factory是关于批量对象创建的，而构建器是分段对象创建的。</p></li>

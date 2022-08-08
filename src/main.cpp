@@ -1,8 +1,9 @@
+extern void singletonTest();
 extern void abstractFactorTest();
 extern void builderPatternTest();
 
 int main()
 {
-    abstractFactorTest();
+    singletonTest();
     return 0;
 }
