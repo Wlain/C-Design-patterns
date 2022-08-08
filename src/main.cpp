@@ -1,7 +1,7 @@
-#include <iostream>
+extern void builderPatternTest();
 
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    builderPatternTest();
     return 0;
 }
