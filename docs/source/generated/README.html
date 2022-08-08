@@ -51,7 +51,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id9">什么时候应该使用单例设计模式？</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#abstract-factory-pattern">抽象工厂模式（Abstract factory Pattern）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#abstract-factory-pattern-factory-method-pattern">抽象工厂模式（Abstract factory Pattern）/ 工厂方法模式（Factory Method Pattern）</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id10">目的：用于创建批量对象</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id11">工厂设计模式的好处</a></li>
 </ul>
@@ -63,6 +63,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#builderbuilder">为什么我们在实现Builder设计模式时需要一个Builder类？</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#builder">Builder设计模式的最大优势</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id15">抽象工厂和构建器设计模式有什么区别？</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#prototype-pattern">原型设计模式（Prototype Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">目的：在已经构造或预初始化的存储对象的帮助下，以较低的成本创建新对象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">原型设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">使用原型设计模式有什么意义？</a></li>
 </ul>
 </li>
 </ul>
@@ -248,8 +254,8 @@
 </ul>
 </section>
 </section>
-<section id="abstract-factory-pattern">
-<h2>抽象工厂模式（Abstract factory Pattern）<a class="headerlink" href="#abstract-factory-pattern" title="Permalink to this headline"></a></h2>
+<section id="abstract-factory-pattern-factory-method-pattern">
+<h2>抽象工厂模式（Abstract factory Pattern）/ 工厂方法模式（Factory Method Pattern）<a class="headerlink" href="#abstract-factory-pattern-factory-method-pattern" title="Permalink to this headline"></a></h2>
 <section id="id10">
 <h3>目的：用于创建批量对象<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
 <ul class="simple">
@@ -321,6 +327,35 @@
 <li><p>Factory批量生产对象，这些对象可以是继承层次结构中的任何对象（如 Point、Point2D、Point3D）。</p></li>
 <li><p>虽然Builder处理仅限于单个对象的对象的实例化。 您会看到Factory是关于批量对象创建的，而构建器是分段对象创建的。</p></li>
 <li><p>在这两种模式中，您都可以在其他类中分离出与对象创建相关的机制</p></li>
+</ul>
+</section>
+</section>
+<section id="prototype-pattern">
+<h2>原型设计模式（Prototype Pattern）<a class="headerlink" href="#prototype-pattern" title="Permalink to this headline"></a></h2>
+<section id="id16">
+<h3>目的：在已经构造或预初始化的存储对象的帮助下，以较低的成本创建新对象<a class="headerlink" href="#id16" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>原型提供了廉价创建复杂对象的灵活性</p></li>
+<li><p>现有对象充当原型，新复制的对象仅在需要时才可以更改相同的属性</p></li>
+<li><p>原型是一个你复制的部分或完全初始化的对象</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>原型设计模式的好处<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>当对象实例化很费性能时，原型很有用</p></li>
+<li><p>原型提供了创建高度动态系统的灵活性</p></li>
+<li><p>可以通过更方便地生成复杂对象来简化系统</p></li>
+<li><p>原型设计模式有助于在不知道对象类型的情况下创建对象的副本</p></li>
+</ul>
+</section>
+<section id="id18">
+<h3>使用原型设计模式有什么意义？<a class="headerlink" href="#id18" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>可以在clone预配置对象的基础上快速创建对象</p></li>
+<li><p>有助于删除一堆冗余代码</p></li>
+<li><p>在不知道其类型的情况下处理对象时更方便</p></li>
+<li><p>当您使用命令设计模式时，原型设计模式是一个明显的选择</p></li>
 </ul>
 </section>
 </section>
