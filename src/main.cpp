@@ -1,14 +1,16 @@
-// creational
+// Creational Patterns
 extern void singletonTest();
 extern void abstractFactorTest();
 extern void builderPatternTest();
 extern void prototypeTest();
-// structural
+// Structural Patterns
 extern void adapterTest();
 extern void bridgeTest();
+// Behavioral Patterns
+extern void templateMethodTest();
 
 int main()
 {
-    bridgeTest();
+    templateMethodTest();
     return 0;
 }
