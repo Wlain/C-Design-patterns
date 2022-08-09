@@ -5,9 +5,10 @@ extern void builderPatternTest();
 extern void prototypeTest();
 // structural
 extern void adapterTest();
+extern void bridgeTest();
 
 int main()
 {
-    adapterTest();
+    bridgeTest();
     return 0;
 }

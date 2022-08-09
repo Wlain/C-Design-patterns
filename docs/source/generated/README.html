@@ -82,6 +82,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#id25">代理和适配器设计模式有什么区别？</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#bridge-pattern">桥接模式（Bridge Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id26">目的：用于将一个类解耦为两部分——抽象</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">桥接设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">桥接设计模式的实际用例是什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">何时使用桥接设计模式？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">适配器和桥接设计模式有什么区别?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">策略和桥梁设计模式有什么区别？</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -276,7 +285,7 @@
 <section id="id11">
 <h3>工厂设计模式的好处<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>用于不同对象创建的单点/类。因此易于维护和理解软件</p></li>
+<li><p>用于不同对象创建的单点/类，因此易于维护和理解软件</p></li>
 <li><p>可以使用抽象工厂在不知道其类型的情况下创建对象</p></li>
 <li><p>它提供了很好的模块化</p></li>
 <li><p>允许更轻松地更改应用程序的设计，这称为松散耦合</p></li>
@@ -426,6 +435,54 @@
 <ul class="simple">
 <li><p>适配器设计模式将一个类的接口转换为兼容但不同的接口</p></li>
 <li><p>代理提供相同但简单的界面，或者有时充当唯一的包装器</p></li>
+</ul>
+</section>
+</section>
+<section id="bridge-pattern">
+<h2>桥接模式（Bridge Pattern）<a class="headerlink" href="#bridge-pattern" title="Permalink to this headline"></a></h2>
+<section id="id26">
+<h3>目的：用于将一个类解耦为两部分——抽象<a class="headerlink" href="#id26" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>它的实现（两者都可以独立开发，促进了类抽象与其实现之间的松散耦合）</p></li>
+<li><p>通过灵活的抽象使用聚合/组合将组件连接在一起（not 继承/泛化）</p></li>
+<li><p>充当桥梁的接口,使得具体类的功能独立于接口实现类,两种类型的类都可以在结构上改变而不会相互影响</p></li>
+</ul>
+</section>
+<section id="id27">
+<h3>桥接设计模式的好处<a class="headerlink" href="#id27" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>桥接设计模式为独立开发抽象（即接口）和实现提供了灵活性,并且客户端/API 用户代码只能访问抽象部分，而无需关心实现部分。</p></li>
+<li><p>它保留了开闭原则，换句话说，提高了可扩展性（因为客户端/API 用户代码仅依赖于抽象，因此实现可以随时修改或扩充）</p></li>
+<li><p>通过使用PIMPL形式的桥接设计模式。我们可以向客户端隐藏实现细节</p></li>
+<li><p>桥接设计模式是旧建议的应用，“更喜欢组合而不是继承”，但以更智能的方式</p></li>
+<li><p>应避免抽象与其实现之间的编译时绑定。这样一个实现可以在运行时选择</p></li>
+</ul>
+</section>
+<section id="id28">
+<h3>桥接设计模式的实际用例是什么？<a class="headerlink" href="#id28" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>任何互联网浏览器中的插件都直接利用这种模式，其中浏览器仅指定抽象和实现因不同类型的插件而异</p></li>
+</ul>
+</section>
+<section id="id29">
+<h3>何时使用桥接设计模式？<a class="headerlink" href="#id29" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>当您不确定实施或其变体时，您仍想继续开发</p></li>
+<li><p>在行为排列问题的情况下，即笛卡尔积复杂性爆炸</p></li>
+</ul>
+</section>
+<section id="id30">
+<h3>适配器和桥接设计模式有什么区别?<a class="headerlink" href="#id30" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>适配器通常与现有应用程序一起使用，以使一些原本不兼容的类很好地协同工作</p></li>
+<li><p>桥接模式通常是预先设计的，让您可以独立开发应用程序的各个部分</p></li>
+</ul>
+</section>
+<section id="id31">
+<h3>策略和桥梁设计模式有什么区别？<a class="headerlink" href="#id31" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>策略是一个单维问题，如多头螺丝刀</p></li>
+<li><p>网桥是一个多维问题，如通信类型和设备</p></li>
 </ul>
 </section>
 </section>
