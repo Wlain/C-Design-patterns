@@ -6,11 +6,12 @@ extern void prototypeTest();
 // Structural Patterns
 extern void adapterTest();
 extern void bridgeTest();
+extern void facadeTest();
 // Behavioral Patterns
 extern void templateMethodTest();
 
 int main()
 {
-    templateMethodTest();
+    facadeTest();
     return 0;
 }
