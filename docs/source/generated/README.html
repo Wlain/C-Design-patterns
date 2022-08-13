@@ -107,6 +107,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#id39">我们应该在哪里使用模板方法设计模式？</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#command-pattern">命令模式（Command Pattern）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id40">目的：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">命令设计模式的好处</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">命令设计模式的重要方面是什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">使用命令设计模式背后的原因是什么？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">命令设计模式和备忘录设计模式之间的区别？</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -570,6 +578,55 @@
 <h3>我们应该在哪里使用模板方法设计模式？<a class="headerlink" href="#id39" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>当您想让客户只扩展算法的特定步骤而不是整个算法结构时，可以使用模板方法设计模式</p></li>
+</ul>
+</section>
+</section>
+<section id="command-pattern">
+<h2>命令模式（Command Pattern）<a class="headerlink" href="#command-pattern" title="Permalink to this heading"></a></h2>
+<section id="id40">
+<h3>目的：<a class="headerlink" href="#id40" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>通过为一组操作创建一个单独的对象来<strong>解耦</strong>发送者和接收者</p></li>
+<li><p>行为设计模式处理对象之间的职责分配，从而使对象之间的交互变得容易且松散耦合</p></li>
+<li><p>命令设计模式是一个非常简单的表示指令或指令集的对象，有助于支持可撤销操作和查询/请求定制</p></li>
+<li><p>命令和查询的关系：</p>
+<ul>
+<li><p>命令：请求操作或更改，例如重命名文件。</p></li>
+<li><p>查询：询问信息（不会导致任何突变）例如列出当前目录中的所有文件</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id41">
+<h3>命令设计模式的好处<a class="headerlink" href="#id41" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>命令设计模式将操作数和操作解耦。因此便于扩展添加新命令很容易并且无需更改现有代码</p></li>
+<li><p>通过排队命令，您还可以像我们上面所做的那样在系统中定义回滚功能</p></li>
+<li><p>它还允许我们创建一个带有一堆命令的宏，这些命令可以在一次调用中一起触发</p></li>
+<li><p>由于命令设计模式有一个单独的结构来存储一组操作，我们可以利用它来安排它</p></li>
+</ul>
+</section>
+<section id="id42">
+<h3>命令设计模式的重要方面是什么？<a class="headerlink" href="#id42" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>接口分离：invoker与receiver是隔离的</p></li>
+<li><p>时间分离：存储一组可以调度的准备就绪的指令</p></li>
+</ul>
+</section>
+<section id="id43">
+<h3>使用命令设计模式背后的原因是什么？<a class="headerlink" href="#id43" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>解耦命令的发送者和接收者</p></li>
+<li><p>实现回调机制</p></li>
+<li><p>实现撤销和重做功能</p></li>
+<li><p>维护命令历史</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>命令设计模式和备忘录设计模式之间的区别？<a class="headerlink" href="#id44" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>命令设计模式表示请求令牌备忘录设计模式表示对象在特定时间的内部状态多态性</p></li>
+<li><p>多态性对对命令设计模式很重要，但对备忘录设计模式不重要</p></li>
 </ul>
 </section>
 </section>

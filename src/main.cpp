@@ -9,9 +9,10 @@ extern void bridgeTest();
 extern void facadeTest();
 // Behavioral Patterns
 extern void templateMethodTest();
+extern void commandTest();
 
 int main()
 {
-    facadeTest();
+    commandTest();
     return 0;
 }
