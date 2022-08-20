@@ -10,9 +10,10 @@ extern void facadeTest();
 // Behavioral Patterns
 extern void templateMethodTest();
 extern void commandTest();
+extern void visitorTest();
 
 int main()
 {
-    commandTest();
+    visitorTest();
     return 0;
 }
