@@ -11,9 +11,10 @@ extern void facadeTest();
 extern void templateMethodTest();
 extern void commandTest();
 extern void visitorTest();
+extern void interpreterTest();
 
 int main()
 {
-    visitorTest();
+    interpreterTest();
     return 0;
 }
