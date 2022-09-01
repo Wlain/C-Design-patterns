@@ -6,6 +6,7 @@
 #include <memory>
 #include <optional>
 #include <vector>
+#include <variant>
 namespace
 {
 /// Event
