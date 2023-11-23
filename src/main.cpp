@@ -13,9 +13,12 @@ extern void commandTest();
 extern void visitorTest();
 extern void interpreterTest();
 extern void stateTest();
+extern void observerTest();
+// ECS
+extern void ecsTest();
 
 int main()
 {
-    stateTest();
+    observerTest();
     return 0;
 }
