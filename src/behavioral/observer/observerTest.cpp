@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <iostream>
 #include <list>
+#include <vector>
 
 // 抽象观察板
 class ObserverBoardInterface
@@ -146,6 +147,77 @@ private:
     WeatherDataInterface& m_data;
 };
 
+// 观察者，负责观察Observable
+template <typename T>
+struct Observer
+{
+    virtual void fieldChanged(T& source, const std::string& fieldName) = 0;
+};
+
+// 被观察者，负责通知Observer
+template <typename T>
+struct Observable
+{
+    void notify(T& source, const std::string& fieldName)
+    {
+        for (auto observer : m_observers)
+            observer->fieldChanged(source, fieldName);
+    }
+
+    void subscribe(Observer<T>& observer)
+    {
+        m_observers.push_back(&observer);
+    }
+
+    void unsubscribe(Observer<T>& observer)
+    {
+        m_observers.erase(std::remove(m_observers.begin(), m_observers.end(), &observer), m_observers.end());
+    }
+
+private:
+    std::vector<Observer<T>*> m_observers;
+};
+
+// 被观察者
+struct Person : Observable<Person>
+{
+    void setAge(uint8_t age)
+    {
+        auto oldCanVote = getCanVote();
+        m_age = age;
+        notify(*this, "age");
+        if (oldCanVote != getCanVote())
+        {
+            notify(*this, "can_vote");
+        }
+    }
+    inline uint8_t getAge() const { return m_age; }
+    bool getCanVote() const { return m_age >= 16; }
+
+private:
+    uint8_t m_age;
+};
+
+// 观察者
+struct TrafficAdministration : Observer<Person>
+{
+    void fieldChanged(Person& source, const std::string& fieldName)
+    {
+        if (fieldName == "age")
+        {
+            if (source.getAge() < 17)
+            {
+                std::cout << "Not old enough to drive!\n";
+            }
+            else
+            {
+                std::cout << "Mature enough to drive!\n";
+                source.unsubscribe(*this);
+            }
+        }
+    }
+};
+
 void observerTest()
 {
     /// test1
@@ -158,4 +230,11 @@ void observerTest()
     wdata->SensorDataChange(10.3, 35.9, 900);
     wdata->registerObserver(currentB.get());
     wdata->SensorDataChange(100, 40, 1900);
+
+    /// test2
+    Person p;
+    TrafficAdministration ta;
+    p.subscribe(ta);
+    p.setAge(16);
+    p.setAge(17);
 }
