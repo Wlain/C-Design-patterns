@@ -14,11 +14,12 @@ extern void visitorTest();
 extern void interpreterTest();
 extern void stateTest();
 extern void observerTest();
+extern void mediatorTest();
 // ECS
 extern void ecsTest();
 
 int main()
 {
-    observerTest();
+    mediatorTest();
     return 0;
 }
