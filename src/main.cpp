@@ -15,11 +15,11 @@ extern void interpreterTest();
 extern void stateTest();
 extern void observerTest();
 extern void mediatorTest();
+extern void strategyTest();
 // ECS
 extern void ecsTest();
-
 int main()
 {
-    mediatorTest();
+    strategyTest();
     return 0;
 }
